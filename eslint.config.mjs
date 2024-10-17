@@ -1,5 +1,5 @@
 import typescriptEslint from 'typescript-eslint'
-import prettier from 'eslint-config-prettier'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import pluginVue from 'eslint-plugin-vue'
 import js from '@eslint/js'
 
@@ -28,5 +28,5 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
     }
   },
-  prettier
+  eslintPluginPrettierRecommended,
 ]
