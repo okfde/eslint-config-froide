@@ -1,32 +1,38 @@
 import typescriptEslint from 'typescript-eslint'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
-import pluginVue from 'eslint-plugin-vue'
-import js from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintPluginVue from 'eslint-plugin-vue'
+import globals from 'globals'
+import eslint from '@eslint/js'
 
-export default [
+export default typescriptEslint.config(
   {
-    ignores: ['**/node_modules', '**/static', '**/build']
+    ignores: [
+      '**/node_modules',
+      '**/static',
+      '**/build',
+      '*.d.ts',
+      '**/coverage',
+      '**/htmlcov'
+    ]
   },
-  js.configs.recommended,
-  ...typescriptEslint.configs.recommended,
-  ...pluginVue.configs['flat/strongly-recommended'],
   {
-    plugins: {
-      'typescript-eslint': typescriptEslint.plugin,
-    },
+    extends: [
+      eslint.configs.recommended,
+      ...typescriptEslint.configs.recommended,
+      ...eslintPluginVue.configs['flat/strongly-recommended']
+    ],
+    files: ['**/*.ts', '**/*.js', '**/*.vue'],
     languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.browser,
       parserOptions: {
         parser: typescriptEslint.parser,
-        project: './tsconfig.json',
-        extraFileExtensions: ['.vue'],
-        sourceType: 'module',
-      },
+        sourceType: 'module'
+      }
     },
-  },
-  {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-explicit-any': 'off'
     }
   },
-  eslintPluginPrettierRecommended,
-]
+  eslintConfigPrettier
+)
