@@ -1,6 +1,6 @@
 {
   "name": "@okfde/eslint-config-froide",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "main": "eslint.config.mjs",
   "type": "module",

@@ -10,6 +10,7 @@ export default typescriptEslint.config(
       '**/node_modules',
       '**/static',
       '**/build',
+      '**/public',
       '*.d.ts',
       '**/coverage',
       '**/htmlcov'
