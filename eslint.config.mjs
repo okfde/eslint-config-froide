@@ -31,7 +31,8 @@ export default typescriptEslint.config(
       }
     },
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off'
+      '@typescript-eslint/no-explicit-any': 'off',
+      'vue/component-name-in-template-casing': ['error', 'PascalCase']
     }
   },
   eslintConfigPrettier
