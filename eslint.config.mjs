@@ -13,7 +13,9 @@ export default typescriptEslint.config(
       '**/public',
       '*.d.ts',
       '**/coverage',
-      '**/htmlcov'
+      '**/htmlcov',
+      '**/.venv',
+      '**/site-packages'
     ]
   },
   {
