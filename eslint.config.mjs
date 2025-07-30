@@ -35,7 +35,19 @@ export default typescriptEslint.config(
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
-      'vue/component-name-in-template-casing': ['error', 'PascalCase']
+      'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true
+        }
+      ]
     }
   },
   eslintConfigPrettier
