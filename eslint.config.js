@@ -1,5 +1,6 @@
 import typescriptEslint from 'typescript-eslint'
 import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended'
 import eslintPluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
 import eslint from '@eslint/js'
@@ -50,5 +51,6 @@ export default typescriptEslint.config(
       ]
     }
   },
-  eslintConfigPrettier
+  eslintConfigPrettier,
+  eslintPluginPrettier
 )
